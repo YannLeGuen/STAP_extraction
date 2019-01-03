@@ -435,14 +435,17 @@ def build_pp_depth_dict(indir, s_ids):
 
 if __name__ == '__main__':
     ROOT_DIR = ''
-    # Directory to Freesurfer database
-    DIR_F = ''
-    s_ids = os.listdir(DIR_F)
+    # Cohort name
+    COHORT = ''
+    # Directory to the sulcal pits database
+    database = os.path.join(ROOT_DIR,  '3T_sulcal_pits',
+                            'Freesurfer', COHORT)
+    s_ids = os.listdir(database)
 
     # Set boolean for the IMAGEN cohort subject ids
     IMAGEN = False
-    outdir = os.path.join(ROOT_DIR,
-                          '3T_sulcal_pits/Freesurfer/depth_profiles')
+    outdir = os.path.join(ROOT_DIR, '3T_sulcal_pits'
+                          'Freesurfer', 'depth_profiles', COHORT)
     if not os.path.isdir(outdir):
         os.makedirs(outdir)
     
@@ -497,7 +500,8 @@ if __name__ == '__main__':
     # path to the saved depth profiles
     indir = outdir
     # set output directory for the phenotypes
-    outdir = os.path.join(ROOT_DIR, '3T_sulcal_pits/Freesurfer/phenotypes')
+    outdir = os.path.join(ROOT_DIR, '3T_sulcal_pits', 'Freesurfer'
+                          'phenotypes', COHORT)
     if not os.path.isdir(outdir):
         os.makedirs(outdir)
     # Set the threshold on DPF and geodesic depth as in the paper

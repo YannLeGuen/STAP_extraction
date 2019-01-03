@@ -18,7 +18,7 @@ def texture_to_subj(s_id):
     # Filename containing the areals
     clusters = 'clusters_total_average_pits_smoothed0.7_60_sym_lh.gii'
     # Full path
-    tex_atlas = os.path.join(os.getcwd(), 'pits_density_08_2017', clusters)
+    tex_atlas = os.path.join(os.getcwd(), clusters)
     # Path to the sphere reg of the template
     # in this case left hemisphere of fsaverage_sym
     sph_atlas = os.path.join(DIR_FSAVERAGE,
